@@ -15,7 +15,7 @@ jobs:
     - name: checkout repo
       uses: actions/checkout@v2
     - name: Lint Ansible Playbook
-      uses: ./.github/actions/ansible/action.yml
+      uses: ./.github/actions/ansible
       with:
         playbook: Docker/playbook.yml
         inventory: localhost
