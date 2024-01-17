@@ -19,4 +19,3 @@ jobs:
       with:
         playbook: Docker/playbook.yml
         inventory: localhost
-
