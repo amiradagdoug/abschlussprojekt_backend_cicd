@@ -1,4 +1,4 @@
-name: CICD1
+name: CICD
 
 on:
   push:
@@ -20,10 +20,9 @@ jobs:
           echo "Backend folder created successfully"
 
       - name: Checkout Additional Repository
-        uses: actions/checkout@v4
-        with:
-          repository: 'BastiWho/Abschlussprojekt_Backend'  # Updated to owner/repo format
-          path: 'backend'
-          
+        run: |
+          git clone https://github.com/BastiWho/Abschlussprojekt_Backend.git backend
+
       - name: Verify Additional Repository
         run: echo "Additional repository checked out successfully"
+
