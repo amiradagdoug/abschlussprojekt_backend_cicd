@@ -21,9 +21,7 @@ jobs:
 
       - name: Checkout Additional Repository
         run: |
-          git clone https://<your-access-token>@github.com/BastiWho/Abschlussprojekt_Backend.git backend
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          git clone https://${{ secrets.ACCESS_TOKEN }}@github.com/BastiWho/Abschlussprojekt_Backend.git backend
 
       - name: Verify Additional Repository
         run: echo "Additional repository checked out successfully"
