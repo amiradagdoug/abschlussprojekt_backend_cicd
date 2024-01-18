@@ -1,12 +1,6 @@
-name: CICD
-
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - '/'
-
+name: Backend  Deploy
+run-name: Build and Deploy Backend teil  by 🚀 ${{ github.actor }} 🤖
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
