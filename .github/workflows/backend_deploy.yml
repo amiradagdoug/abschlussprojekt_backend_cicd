@@ -1,11 +1,6 @@
 name: CICD
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - '/'
-
+run-name: CICD 🚀 ${{ github.actor }} 🤖
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
