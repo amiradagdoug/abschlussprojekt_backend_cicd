@@ -1,15 +1,16 @@
 name: CICD
-run-name: Build 
 on:
   push:
     branches:
-      -main 
+      - main
     paths:
       - '/'
 jobs:
-  testjob:
+  build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
       - name: Create Backend Folder
         run: mkdir backend
       - uses: actions/checkout@v4
