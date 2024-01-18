@@ -6,16 +6,21 @@ on:
     paths:
       - '/'
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-      - name: Create Backend Folder
-        run: mkdir backend
-      - uses: actions/checkout@v4
-        with:
-          # Repository name with owner. For example, actions/checkout
-          # Default: ${{ github.repository }}
-          repository: 'https://github.com/BastiWho/Abschlussprojekt_Backend.git'
-          path: 'backend'
+        build:
+          runs-on: ubuntu-latest
+          steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+      
+            - name: Create Backend Folder
+              run: |
+                mkdir backend
+                echo "Backend folder created successfully"
+      
+            - name: Checkout Additional Repository
+              uses: actions/checkout@v4
+              with:
+                repository: 'https://github.com/BastiWho/Abschlussprojekt_Backend.git'
+                path: 'backend'
+              run: echo "Additional repository checked out successfully"
+      
