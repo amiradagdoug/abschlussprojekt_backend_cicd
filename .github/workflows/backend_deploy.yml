@@ -1,0 +1,20 @@
+name: CICD
+run-name: Build 
+on:
+  push:
+    branches:
+      - dev-
+    paths:
+      - '/'
+jobs:
+  testjob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Backend Folder
+        run: mkdir backend
+      - uses: actions/checkout@v4
+        with:
+          # Repository name with owner. For example, actions/checkout
+          # Default: ${{ github.repository }}
+          repository: 'https://github.com/BastiWho/Abschlussprojekt_Backend.git'
+          path: 'backend'
