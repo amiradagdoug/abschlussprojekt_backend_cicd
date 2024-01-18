@@ -3,7 +3,7 @@ run-name: Build
 on:
   push:
     branches:
-      - dev-
+      -main 
     paths:
       - '/'
 jobs:
