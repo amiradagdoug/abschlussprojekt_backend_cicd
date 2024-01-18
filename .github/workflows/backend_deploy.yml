@@ -1,6 +1,12 @@
 name: CICD
-run-name: CICD 🚀 ${{ github.actor }} 🤖
-on: [push]
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '/'
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,7 +22,8 @@ jobs:
       - name: Checkout Additional Repository
         uses: actions/checkout@v4
         with:
-          repository: 'https://github.com/BastiWho/Abschlussprojekt_Backend.git'
+          repository: 'BastiWho/Abschlussprojekt_Backend'  # Updated to owner/repo format
           path: 'backend'
+          
       - name: Verify Additional Repository
         run: echo "Additional repository checked out successfully"
